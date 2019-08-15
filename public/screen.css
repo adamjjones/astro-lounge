@@ -10,3 +10,92 @@ body {
   margin: 0;
   min-height: 100%;
 }
+
+.top-header {
+  color: white;
+  background-color: #512da8;
+  padding: 1rem;
+  font-size: 30px;
+}
+
+.top-right-nav {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: flex-end;
+  color: white;
+}
+
+.nav-links {
+  color: white;
+  width: 10%;
+  /* padding-bottom: 10px; */
+  padding-right: 20px;
+}
+
+.header-container {
+  display: flex;
+  align-content: center;
+  padding-top: 0.5rem;
+}
+
+.top-right-nav .nav-links {
+  font-size: 20px;
+}
+
+#first-api {
+  background-image: url('images/Earth-on-moon.jpeg');
+}
+
+img {
+  width: 100%;
+  height: 350px;
+}
+
+.launches-header {
+  margin-top: 15px;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ffc107;
+}
+
+button {
+  display: flex;
+  border-radius: 0rem 1rem 1rem 0rem;
+  justify-content: right;
+  align-items: center;
+  padding: 30px;
+  background-color: #ffc107;
+}
+
+.fa-angle-right {
+  display: flex;
+  border-radius: 0rem 1rem 1rem 0rem;
+  justify-items: right;
+  align-items: center;
+  background-color: #ffc107;
+}
+
+.second-api-call {
+  margin: 20%;
+  background-color: #000000;
+}
+
+.mission-statement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 1rem; */
+  background-color: #d1c4e9;
+}
+#statement {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #673ab7;
+  padding-top: 10px;
+  height: 4rem;
+}
