@@ -18,18 +18,17 @@ body {
   font-size: 30px;
 }
 
-.top-right-nav {
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: flex-end;
+.nav-link {
   color: white;
+  font-size: 14pt;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  margin-left: 55%;
 }
 
-.nav-links {
+.nav-link-contact {
   color: white;
-  width: 10%;
-  /* padding-bottom: 10px; */
-  padding-right: 20px;
+  font-size: 14pt;
 }
 
 .header-container {
@@ -43,12 +42,18 @@ body {
 }
 
 #first-api {
-  background-image: url('images/Earth-on-moon.jpeg');
+  object-fit: cover;
 }
 
 img {
   width: 100%;
   height: 350px;
+}
+
+#copyright {
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .launches-header {
@@ -57,26 +62,62 @@ img {
   background-color: #ffc107;
 }
 
-button {
-  display: flex;
+.button-left {
+  margin-left: 5px;
+  margin-top: 25px;
+  /* display: flex; */
   border-radius: 0rem 1rem 1rem 0rem;
-  justify-content: right;
-  align-items: center;
-  padding: 30px;
+  float: left;
+  padding: 20px;
   background-color: #ffc107;
+  height: 70%;
+  /* position: relative; */
+  top: 12rem;
+}
+
+.button-right {
+  margin-right: 5px;
+  margin-top: 25px;
+  /* display: flex; */
+  border-radius: 0rem 1rem 1rem 0rem;
+  float: right;
+  padding: 20px;
+  background-color: #ffc107;
+  height: 70%;
 }
 
 .fa-angle-right {
   display: flex;
+  justify-content: flex-end;
   border-radius: 0rem 1rem 1rem 0rem;
-  justify-items: right;
+  justify-items: flex-end;
   align-items: center;
   background-color: #ffc107;
+  margin: 0;
 }
 
-.second-api-call {
-  margin: 20%;
-  background-color: #000000;
+#second-api {
+  display: flex;
+  justify-items: stretch;
+  margin: 0px;
+  padding: 0px;
+  height: 300px;
+}
+
+.fa-space-shuttle {
+  position: absolute;
+  margin-left: 100px;
+  font-size: 16pt;
+}
+
+.mission-name {
+  font-weight: bold;
+  display: flex;
+  /* justify-content: center; */
+  margin: 0% 10% 0% 10%;
+  width: 95%;
+  height: 300px;
+  background-color: #ededed;
 }
 
 .mission-statement {
@@ -98,4 +139,8 @@ footer {
   background-color: #673ab7;
   padding-top: 10px;
   height: 4rem;
+}
+
+.img-header {
+  margin-bottom: 30%;
 }
