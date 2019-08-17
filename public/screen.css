@@ -95,38 +95,60 @@ img {
   background-color: #ffc107;
   margin: 0;
 }
+.stack-area {
+  display: flex;
+  flex-direction: column;
+  background-color: #ededed;
+}
 
 #second-api {
   display: flex;
-  justify-items: stretch;
-  margin: 0px;
+  /* justify-items: stretch; */
+  margin-bottom: 15px;
   padding: 0px;
   height: 300px;
 }
 
 .fa-space-shuttle {
-  position: absolute;
-  margin-left: 100px;
+  padding: 5px;
   font-size: 16pt;
 }
 
-.mission-name {
-  font-weight: bold;
+#shuttle-with-icon {
   display: flex;
-  /* justify-content: center; */
-  margin: 0% 10% 0% 10%;
-  width: 95%;
-  height: 300px;
-  background-color: #ededed;
+  justify-content: center;
+}
+
+#shuttle {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.mission-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* height: 400px; */
+  /* background-color: #ededed; */
+}
+
+.mission-details {
+  /* top: 50px; */
+  display: flex;
+  flex-direction: column;
 }
 
 .mission-statement {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* padding: 1rem; */
   background-color: #d1c4e9;
 }
+
+#details-with-icon {
+  margin: 5px 5px 5px 5px;
+}
+
 #statement {
   display: flex;
   justify-content: center;

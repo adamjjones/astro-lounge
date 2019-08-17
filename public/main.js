@@ -10,10 +10,10 @@ const main = () => {
         'copyright: ' + data.copyright + ' | title: ' + data.title
       document.querySelector('#first-api').src = data.url
     })
-  showNasaData()
+  showLaunchData()
 }
 
-const showNasaData = () => {
+const showLaunchData = () => {
   fetch('https://sdg-astro-api.herokuapp.com/api/SpaceX/launches/upcoming')
     .then(resp => {
       return resp.json()
@@ -21,9 +21,9 @@ const showNasaData = () => {
 
     .then(launches => {
       console.log(launches)
-      document.querySelector('#shuttle').textContent
-      document.querySelector('.mission-name').textContent =
-        launches[0].mission_name
+      document.querySelector('#shuttle').textContent = launches[0].mission_name
+
+      document.querySelector('#mission').textContent = launches[0].details
     })
 }
 
