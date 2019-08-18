@@ -1,32 +1,8 @@
-const main = () => {
-  fetch('https://sdg-astro-api.herokuapp.com/api/Nasa/apod')
-    .then(response => {
-      return response.json()
-    })
+let launches = []
+let currentLaunch = 0
 
-    .then(data => {
-      console.log(data)
-      document.querySelector('#copyright').textContent =
-        'copyright: ' + data.copyright + ' | title: ' + data.title
-      let imageStyle = `background-image: url('${data.url}');`
-      imageStyle +=
-        ' height: 300px;' +
-        ' width: 100%;' +
-        ' color: white;' +
-        ' background-position: center;' +
-        ' background-repeat: no-repeat;' +
-        ' background-size: cover;' +
-        ' display: flex;' +
-        ' justify-content: center;' +
-        ' align-items: center;' +
-        ' font-size: 140%;'
-      document.querySelector('#first-api').setAttribute('style', imageStyle)
-    })
-  showLaunchData()
-}
-
-const currentLaunch = 0
-const displayLaunch = launch => {
+const displayLaunch = () => {
+  const launch = launches[currentLaunch]
   document.querySelector('#shuttle').textContent = launch.mission_name
   document.querySelector('#mission').textContent = launch.details
   document.querySelector('#location-text').textContent =
@@ -65,9 +41,43 @@ const displayLaunch = launch => {
       )
     )
   }
-  setTimeout(() => {
-    displayLaunch(launch)
-  }, 990)
+}
+const prevLaunch = () => {
+  currentLaunch = Math.max(currentLaunch - 1, 0)
+  displayLaunch()
+}
+const nextLaunch = () => {
+  currentLaunch = Math.min(currentLaunch + 1, launches.length - 1)
+  displayLaunch()
+}
+
+const main = () => {
+  document.querySelector('.button-left').addEventListener('click', prevLaunch)
+  document.querySelector('.button-right').addEventListener('click', nextLaunch)
+  fetch('https://sdg-astro-api.herokuapp.com/api/Nasa/apod')
+    .then(response => {
+      return response.json()
+    })
+
+    .then(data => {
+      console.log(data)
+      document.querySelector('#copyright').textContent =
+        'copyright: ' + data.copyright + ' | title: ' + data.title
+      let imageStyle = `background-image: url('${data.url}');`
+      imageStyle +=
+        ' height: 300px;' +
+        ' width: 100%;' +
+        ' color: white;' +
+        ' background-position: center;' +
+        ' background-repeat: no-repeat;' +
+        ' background-size: cover;' +
+        ' display: flex;' +
+        ' justify-content: center;' +
+        ' align-items: center;' +
+        ' font-size: 140%;'
+      document.querySelector('#first-api').setAttribute('style', imageStyle)
+    })
+  showLaunchData()
 }
 
 const showLaunchData = () => {
@@ -76,10 +86,14 @@ const showLaunchData = () => {
       return resp.json()
     })
 
-    .then(launches => {
-      console.log(launches)
-      displayLaunch(launches[currentLaunch])
+    .then(data => {
+      console.log(data)
+      launches = data
+      displayLaunch()
     })
+  setInterval(() => {
+    displayLaunch()
+  }, 990)
 }
 
 document.addEventListener('DOMContentLoaded', main)

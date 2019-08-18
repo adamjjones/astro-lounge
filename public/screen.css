@@ -99,6 +99,7 @@ img {
   display: flex;
   flex-direction: column;
   background-color: #ededed;
+  min-width: 85%;
 }
 
 #second-api {
