@@ -26,6 +26,10 @@ body {
   margin-left: 55%;
 }
 
+a:hover {
+  background-color: #ffc107;
+}
+
 .nav-link-contact {
   color: white;
   font-size: 14pt;
@@ -104,10 +108,9 @@ img {
 
 #second-api {
   display: flex;
-  /* justify-items: stretch; */
   margin-bottom: 15px;
   padding: 0px;
-  height: 300px;
+  /* height: 300px; */
 }
 
 .fa-space-shuttle {
@@ -166,4 +169,35 @@ footer {
 
 .img-header {
   margin-bottom: 30%;
+}
+
+@media (min-width: 300px) and (max-width: 500px) {
+  .nav-link {
+    margin-left: 10px;
+    height: 30px;
+  }
+
+  .nav-link-contact {
+    position: absolute;
+    margin-left: 260px;
+    margin-top: 30px;
+  }
+
+  .container {
+    width: 420px;
+  }
+
+  .mission-statement {
+    margin-top: 50px;
+    width: 420px;
+  }
+
+  #second-api {
+    height: 350px;
+    padding-bottom: 30px;
+  }
+
+  footer {
+    width: 430px;
+  }
 }

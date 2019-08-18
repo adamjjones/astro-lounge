@@ -1,6 +1,7 @@
 let launches = []
 let currentLaunch = 0
 
+// Displays mission name, location and calculates the countdown
 const displayLaunch = () => {
   const launch = launches[currentLaunch]
   document.querySelector('#shuttle').textContent = launch.mission_name
@@ -42,15 +43,20 @@ const displayLaunch = () => {
     )
   }
 }
+
+// Show the previous launch information from current launch
 const prevLaunch = () => {
   currentLaunch = Math.max(currentLaunch - 1, 0)
   displayLaunch()
 }
+
+// Show the next launch information from current launch
+
 const nextLaunch = () => {
   currentLaunch = Math.min(currentLaunch + 1, launches.length - 1)
-  displayLaunch()
+  displayLaunch(launches[currentLaunch])
 }
-
+// Fetches data for the top image api and displays text on top of image
 const main = () => {
   document.querySelector('.button-left').addEventListener('click', prevLaunch)
   document.querySelector('.button-right').addEventListener('click', nextLaunch)
@@ -80,6 +86,7 @@ const main = () => {
   showLaunchData()
 }
 
+// Fetches data for the launches api and update the counter
 const showLaunchData = () => {
   fetch('https://sdg-astro-api.herokuapp.com/api/SpaceX/launches/upcoming')
     .then(resp => {
