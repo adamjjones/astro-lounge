@@ -15,8 +15,8 @@ const displayLaunch = () => {
   const dif = launchDate.getTime() - now.getTime()
   const secondsFromT1ToT2 = dif / 1e3
   let totalSeconds = Math.abs(secondsFromT1ToT2)
-  if (secondsFromT1ToT2 < 0) {
-    countdown.appendChild(document.createTextNode('Launched!'))
+  if (dif < 0) {
+    countdown.textContent = 'Launched!'
   } else {
     const time = {
       days: 0,
